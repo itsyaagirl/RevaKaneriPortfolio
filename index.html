@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reva Kaneri ✿ AI/ML Engineer</title>
+  <meta name="description" content="Reva Kaneri — MS Data Science @ UC San Diego, Amazon AI Intern, ex-FedEx. Building AI/ML systems & communities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>" />
+</head>
+<body>
+  <!-- Floating background bubbles -->
+  <div class="bubbles" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#home" class="logo">✿ reva</a>
+    <div class="nav-links">
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#community">community</a>
+      <a href="#projects">projects</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="hero-avatar">
+      <!-- Cute illustrated girl avatar (SVG) -->
+      <svg viewBox="0 0 200 200" width="180" height="180" role="img" aria-label="Cute avatar of Reva">
+        <defs>
+          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ffd6ec"/><stop offset="100%" stop-color="#c3b4ff"/>
+          </linearGradient>
+          <linearGradient id="hair" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3b2a3f"/><stop offset="100%" stop-color="#1e141f"/>
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="96" fill="url(#bg)"/>
+        <!-- hair back -->
+        <path d="M42 96c0-40 24-64 58-64s58 24 58 64c0 34-6 58-16 74H58C48 154 42 130 42 96z" fill="url(#hair)"/>
+        <!-- face -->
+        <path d="M64 96c0-26 16-44 36-44s36 18 36 44c0 30-16 48-36 48S64 126 64 96z" fill="#f6cbb0"/>
+        <!-- cheeks -->
+        <circle cx="80" cy="108" r="6" fill="#ff9ec4" opacity=".6"/>
+        <circle cx="120" cy="108" r="6" fill="#ff9ec4" opacity=".6"/>
+        <!-- eyes -->
+        <circle cx="84" cy="94" r="5.5" fill="#2b1b2e"/>
+        <circle cx="116" cy="94" r="5.5" fill="#2b1b2e"/>
+        <circle cx="86" cy="92" r="1.6" fill="#fff"/>
+        <circle cx="118" cy="92" r="1.6" fill="#fff"/>
+        <!-- smile -->
+        <path d="M90 116q10 9 20 0" stroke="#b5546e" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- hair front + bangs -->
+        <path d="M62 92c2-34 22-52 38-52s36 18 38 52c-10-16-22-22-22-22s-4 10-16 10-16-10-16-10-12 6-22 22z" fill="url(#hair)"/>
+        <!-- flower -->
+        <g transform="translate(138 60)">
+          <circle r="7" fill="#ffb3d9"/>
+          <circle cx="10" r="7" fill="#ffc6e5"/>
+          <circle cx="5" cy="8" r="7" fill="#ffb3d9"/>
+          <circle cx="5" cy="4" r="4" fill="#fff3b0"/>
+        </g>
+      </svg>
+      <span class="wave">👋</span>
+    </div>
+
+    <h1 class="hero-title">hi, i'm <span class="grad">Reva</span></h1>
+    <p class="hero-sub">AI/ML engineer · community builder · perpetual learner ✨</p>
+    <p class="hero-desc">
+      MS Data Science @ UC San Diego · Amazon AI Intern · ex-FedEx<br/>
+      i build intelligent systems <em>and</em> the communities around them 🫶
+    </p>
+
+    <!-- floating skill bubbles -->
+    <div class="skill-cloud">
+      <span class="skill s1">Python</span>
+      <span class="skill s2">Agentic AI</span>
+      <span class="skill s3">AWS</span>
+      <span class="skill s4">Machine Learning</span>
+      <span class="skill s5">C++</span>
+      <span class="skill s6">Distributed Systems</span>
+      <span class="skill s7">Java</span>
+      <span class="skill s8">RAG</span>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn primary" href="#projects">see my work 🚀</a>
+      <a class="btn ghost" href="#community">my community 💜</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2 class="section-title">✿ about me</h2>
+    <div class="glass about-card">
+      <p>
+        i'm a data scientist turned <b>AI/ML engineer</b> currently pursuing my
+        <b>Master's in Data Science at UC San Diego</b> (GPA 4.00, but who's counting 😌).
+        i love the messy, ambiguous problems — turning them into clean, real-time systems that people actually use.
+      </p>
+      <p>
+        this summer i'm an <b>AI Software Engineer Intern at Amazon</b>, building agentic AI + low-latency
+        services for Amazon Connect. before grad school i spent 2 years at <b>FedEx</b> building
+        large-scale data pipelines over $14.8B+ in revenue. outside of code, i run a
+        <b>women-in-tech community</b> because tech is better when more of us are in the room. 💫
+      </p>
+      <div class="pills">
+        <span>🎓 UC San Diego</span><span>📦 Amazon</span><span>🚚 FedEx</span>
+        <span>💜 Women in Tech</span><span>🤖 Agentic AI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <h2 class="section-title">✿ experience</h2>
+    <div class="timeline">
+      <div class="glass tl-card">
+        <div class="tl-top"><span class="tl-emoji">📦</span><span class="tl-when">Jun–Sep 2026</span></div>
+        <h3>AI Software Engineer Intern · Amazon</h3>
+        <p>Built <b>ElizaStaffSchedulingService</b> — a synchronous Python API on AWS Lambda serving real-time staffing metrics at &lt;10s p99, replacing a ~52s async pipeline. Designed <b>agentic AI "what-if" workflows</b> so an AI agent can chain forecast + metric computation in one conversational turn. 🤖</p>
+      </div>
+      <div class="glass tl-card">
+        <div class="tl-top"><span class="tl-emoji">🎓</span><span class="tl-when">2025–2027</span></div>
+        <h3>MS Data Science · UC San Diego</h3>
+        <p>GPA 4.00. Coursework in ML, Efficient AI, Algorithms, Recommender Systems & AI Engineering. Graduate researcher in AI-enabled scientific discovery + stochastic optimization. 🔬</p>
+      </div>
+      <div class="glass tl-card">
+        <div class="tl-top"><span class="tl-emoji">🚚</span><span class="tl-when">2023–2025</span></div>
+        <h3>Data Scientist / Engineer · FedEx</h3>
+        <p>Built distributed ETL pipelines (Python/SQL/SAS) improving query performance 60% & saving 40+ hrs/month. Led pricing & revenue-quality analytics across $14.8B+ in revenue with executive dashboards. 📊</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section id="community" class="section">
+    <h2 class="section-title">✿ my tech community 💜</h2>
+    <div class="glass community-card">
+      <div class="community-glow"></div>
+      <h3>Founder · Women in Tech Community</h3>
+      <p>
+        i founded a <b>social-media tech community of 15+ women engineers</b> — a cozy corner of the internet
+        where we swap resources, mentorship, coding wins & the occasional bug-induced meltdown. 🐛💗
+        i also mentor through <b>SWE EDGE</b> and was an <b>Adobe Women in Technology Scholarship Finalist</b>.
+      </p>
+      <div class="stat-row">
+        <div class="stat"><span class="num">15+</span><span class="lbl">engineers</span></div>
+        <div class="stat"><span class="num">∞</span><span class="lbl">good vibes</span></div>
+        <div class="stat"><span class="num">💜</span><span class="lbl">advocacy</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2 class="section-title">✿ projects</h2>
+
+    <p class="sub-label">🌟 impactful builds</p>
+    <div class="grid">
+      <article class="glass card">
+        <div class="card-emoji">🔭</div>
+        <h3>Agentic AI for Gravitational Lensing</h3>
+        <p>Multi-agent framework orchestrating DeepLenseSim + SLURM to automate simulation, validation & failure recovery for large-scale astrophysics datasets. Mentored by MIT.</p>
+        <div class="tags"><span>Python</span><span>Multi-Agent AI</span><span>SLURM</span></div>
+      </article>
+      <article class="glass card">
+        <div class="card-emoji">📉</div>
+        <h3>Early Churn Warning System</h3>
+        <p>ML pipeline over 10M+ records for 200+ accounts generating risk scores + automated alerts — improved early churn detection by 40%.</p>
+        <div class="tags"><span>ML</span><span>Feature Eng</span><span>Python</span></div>
+      </article>
+      <article class="glass card">
+        <div class="card-emoji">⚡</div>
+        <h3>Real-Time Metrics API</h3>
+        <p>Synchronous low-latency service replacing a 52s async pipeline — real-time "what-if" staffing analysis at &lt;10s p99 on AWS Lambda.</p>
+        <div class="tags"><span>AWS</span><span>Distributed</span><span>API Design</span></div>
+      </article>
+    </div>
+
+    <p class="sub-label">🎀 cute little side quests <span class="mock">(for fun ✨)</span></p>
+    <div class="grid">
+      <article class="glass card cute">
+        <div class="card-emoji">☕</div>
+        <h3>MoodBrew</h3>
+        <p>A tiny app that recommends a coffee based on your mood + a lo-fi playlist to match. because debugging needs a soundtrack.</p>
+        <div class="tags"><span>React</span><span>JS</span><span>Whimsy</span></div>
+      </article>
+      <article class="glass card cute">
+        <div class="card-emoji">🪴</div>
+        <h3>PlantPal</h3>
+        <p>ML classifier that IDs your houseplant from a photo and reminds you to water it (so it stops dying). 96% accuracy, 0 dead plants.</p>
+        <div class="tags"><span>CV</span><span>Python</span><span>TensorFlow</span></div>
+      </article>
+      <article class="glass card cute">
+        <div class="card-emoji">✍️</div>
+        <h3>CommitPoet</h3>
+        <p>CLI that turns your boring git commit messages into tiny haikus. purely chaotic, deeply loved by my terminal.</p>
+        <div class="tags"><span>CLI</span><span>NLP</span><span>Fun</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>let's build something lovely together 🌸</p>
+    <div class="footer-links">
+      <a href="mailto:rkaneri@ucsd.edu">email</a>
+      <a href="https://linkedin.com/in/reva-kaneri" target="_blank" rel="noopener">linkedin</a>
+      <a href="https://github.com/itsyaagirl" target="_blank" rel="noopener">github</a>
+    </div>
+    <p class="tiny">made with 💜 + a little too much coffee · © 2026 Reva Kaneri</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
