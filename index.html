@@ -20,7 +20,6 @@
     <a href="#home" class="logo">✿ reva</a>
     <div class="nav-links">
       <a href="#about">about</a>
-      <a href="#lens">my lens</a>
       <a href="#experience">experience</a>
       <a href="#community">community</a>
       <a href="#projects">projects</a>
@@ -78,8 +77,8 @@
       i build intelligent systems <em>and</em> the communities around them 🫶
     </p>
 
-    <!-- floating skill bubbles -->
-    <div class="skill-cloud">
+    <!-- software × data × product, with skills floating around -->
+    <div class="hero-venn" id="lens">
       <span class="skill s1">Python</span>
       <span class="skill s2">Agentic AI</span>
       <span class="skill s3">AWS</span>
@@ -88,6 +87,26 @@
       <span class="skill s6">Distributed Systems</span>
       <span class="skill s7">Java</span>
       <span class="skill s8">RAG</span>
+
+      <svg class="venn" viewBox="0 0 320 300" role="group" aria-label="software, data and product — tap a circle to highlight matching work">
+        <defs>
+          <radialGradient id="g-sw" cx="35%" cy="35%"><stop offset="0%" stop-color="#d4f1ff"/><stop offset="100%" stop-color="#5ec9ff"/></radialGradient>
+          <radialGradient id="g-da" cx="65%" cy="35%"><stop offset="0%" stop-color="#e6dcff"/><stop offset="100%" stop-color="#a06bff"/></radialGradient>
+          <radialGradient id="g-pr" cx="50%" cy="70%"><stop offset="0%" stop-color="#ffe0ee"/><stop offset="100%" stop-color="#ff7eb3"/></radialGradient>
+          <radialGradient id="g-me" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#ffe9f4"/></radialGradient>
+        </defs>
+        <circle class="v-circle" data-t="software" cx="112" cy="108" r="94" fill="url(#g-sw)"/>
+        <circle class="v-circle" data-t="data"     cx="208" cy="108" r="94" fill="url(#g-da)"/>
+        <circle class="v-circle" data-t="product"  cx="160" cy="192" r="94" fill="url(#g-pr)"/>
+        <text class="v-label" x="76"  y="92">software</text>
+        <text class="v-label" x="244" y="92">data</text>
+        <text class="v-label" x="160" y="254">product</text>
+        <g class="v-me">
+          <circle cx="160" cy="138" r="27" fill="url(#g-me)"/>
+          <text class="v-me-hi" x="160" y="132">hi, i'm</text>
+          <text class="v-me-name" x="160" y="149">reva</text>
+        </g>
+      </svg>
     </div>
 
     <div class="hero-cta">
@@ -96,37 +115,6 @@
       <a class="btn ghost" href="https://linkedin.com/in/reva-kaneri" target="_blank" rel="noopener">linkedin 💼</a>
     </div>
   </header>
-
-  <!-- LENS: software × data × product -->
-  <section id="lens" class="section">
-    <h2 class="section-title">✿ what are you hiring for?</h2>
-    <p class="lens-intro">tap a circle — or where they overlap</p>
-
-    <div class="lens-wrap">
-      <svg class="venn" viewBox="0 0 320 300" role="group" aria-label="Venn diagram: software, data, product — tap to choose">
-        <defs>
-          <radialGradient id="g-sw" cx="35%" cy="35%"><stop offset="0%" stop-color="#d4f1ff"/><stop offset="100%" stop-color="#5ec9ff"/></radialGradient>
-          <radialGradient id="g-da" cx="65%" cy="35%"><stop offset="0%" stop-color="#e6dcff"/><stop offset="100%" stop-color="#a06bff"/></radialGradient>
-          <radialGradient id="g-pr" cx="50%" cy="70%"><stop offset="0%" stop-color="#ffe0ee"/><stop offset="100%" stop-color="#ff7eb3"/></radialGradient>
-        </defs>
-        <circle class="v-circle" data-t="software" cx="112" cy="108" r="94" fill="url(#g-sw)"/>
-        <circle class="v-circle" data-t="data"     cx="208" cy="108" r="94" fill="url(#g-da)"/>
-        <circle class="v-circle" data-t="product"  cx="160" cy="192" r="94" fill="url(#g-pr)"/>
-        <text class="v-label" x="76"  y="92">software</text>
-        <text class="v-label" x="244" y="92">data</text>
-        <text class="v-label" x="160" y="252">product</text>
-        <text class="v-star" x="160" y="142">✿</text>
-      </svg>
-
-      <div class="glass lens-panel" aria-live="polite">
-        <p class="lens-kicker" id="lensKicker">all three</p>
-        <h3 id="lensTitle">the overlap</h3>
-        <p class="lens-pitch" id="lensPitch"></p>
-        <ul class="lens-proof" id="lensProof"></ul>
-        <p class="lens-roles"><span>fits</span> <span id="lensRoles"></span></p>
-      </div>
-    </div>
-  </section>
 
   <!-- ABOUT -->
   <section id="about" class="section">

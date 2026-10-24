@@ -144,14 +144,6 @@
     current = key;
     const L = LENSES[key], on = tracksOf(key);
 
-    $("lensKicker").textContent = L.kicker;
-    $("lensTitle").innerHTML = L.title;
-    $("lensPitch").innerHTML = L.pitch;
-    $("lensRoles").textContent = L.roles.join(" · ");
-    $("lensProof").innerHTML = L.proof.map((p) => `<li>${p}</li>`).join("");
-
-    const panel = document.querySelector(".lens-panel");
-    panel.classList.remove("pop"); void panel.offsetWidth; panel.classList.add("pop");
 
     circles.forEach((c) => c.classList.toggle("on", on.includes(c.dataset.t)));
     pills.forEach((p) => {
