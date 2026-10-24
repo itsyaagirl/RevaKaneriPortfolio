@@ -72,7 +72,7 @@ em{font-style:normal;background:linear-gradient(transparent 60%,#ffd6ec 60%)}
 .btn:hover{transform:translateY(-3px) scale(1.03)}
 
 /* ---------- sections ---------- */
-.section{max-width:1040px;margin:0 auto;padding:60px 6vw}
+.section{max-width:1040px;margin:0 auto;padding:60px 6vw;scroll-margin-top:60px}
 .section-title{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800;text-align:center;margin-bottom:34px}
 .sub-label{font-weight:700;font-size:1.15rem;margin:34px 0 16px;color:var(--muted)}
 .sub-label .mock{font-weight:500;font-size:.9rem;opacity:.7}
@@ -117,6 +117,28 @@ em{font-style:normal;background:linear-gradient(transparent 60%,#ffd6ec 60%)}
 .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .tags span{background:rgba(160,107,255,.14);color:#7a4dff;padding:5px 12px;border-radius:20px;font-weight:700;font-size:.75rem}
 
+/* nav cta */
+.nav-links .nav-cta{background:linear-gradient(90deg,#ff7eb3,#a06bff);color:#fff;padding:4px 14px;border-radius:20px}
+.nav-links .nav-cta:hover{color:#fff}
+
+/* resume */
+.resume-card{padding:30px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.resume-icon{font-size:2.8rem}
+.resume-text{flex:1;min-width:220px}
+.resume-text h3{font-size:1.2rem;margin-bottom:4px}
+.resume-text p{color:var(--muted);font-weight:500;font-size:.92rem}
+.resume-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* connect */
+.connect-intro{text-align:center;color:var(--muted);font-weight:600;margin:-18px 0 26px}
+.connect-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:18px}
+.connect-card{padding:24px;display:flex;flex-direction:column;gap:4px;transition:.3s}
+.connect-card:hover{transform:translateY(-6px)}
+.connect-card.highlight{background:linear-gradient(135deg,rgba(255,126,179,.35),rgba(160,107,255,.35))}
+.c-emoji{font-size:2rem}
+.c-title{font-family:'Poppins';font-weight:700;font-size:1.1rem}
+.c-sub{color:var(--muted);font-weight:600;font-size:.85rem;word-break:break-word}
+
 /* footer */
 .footer{text-align:center;padding:56px 6vw 40px}
 .footer p{font-weight:700;font-size:1.2rem}
@@ -131,6 +153,14 @@ em{font-style:normal;background:linear-gradient(transparent 60%,#ffd6ec 60%)}
 .reveal.show{opacity:1;transform:none;transition:.7s ease}
 
 @media(max-width:600px){
-  .nav-links{gap:14px;font-size:.85rem}
+  .nav{padding:10px 16px;gap:14px}
+  .logo{flex-shrink:0;font-size:1.1rem}
+  .nav-links{gap:14px;font-size:.85rem;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding:4px 0}
+  .nav-links::-webkit-scrollbar{display:none}
+  .hero{padding-top:40px}
+  .skill-cloud{height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:0 4px}
+  .skill{position:static;font-size:.8rem;padding:6px 13px}
+  .resume-card{text-align:center;justify-content:center}
+  .resume-actions{justify-content:center}
   .stat-row{gap:26px}
 }
