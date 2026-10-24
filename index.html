@@ -72,7 +72,7 @@
     </div>
 
     <h1 class="hero-title">hi, i'm <span class="grad">Reva</span></h1>
-    <p class="hero-sub">building where <span class="t-sw">software</span> · <span class="t-da">data</span> · <span class="t-pr">product</span> meet ✨</p>
+    <p class="hero-sub">AI/ML engineer · community builder · perpetual learner ✨</p>
     <p class="hero-desc">
       MS Data Science @ UC San Diego · Amazon AI Intern · ex-FedEx<br/>
       i build intelligent systems <em>and</em> the communities around them 🫶
@@ -100,62 +100,32 @@
   <!-- LENS: software × data × product -->
   <section id="lens" class="section">
     <h2 class="section-title">✿ what are you hiring for?</h2>
-    <p class="lens-intro">i work where <b class="t-sw">software</b>, <b class="t-da">data</b> &amp; <b class="t-pr">product</b> overlap.
-      tap a circle — or an overlap — to see me through that lens 🔍</p>
-
-    <div class="lens-pills" role="tablist" aria-label="Choose a lens">
-      <button class="lens-pill" data-lens="software">💻 software</button>
-      <button class="lens-pill" data-lens="data">📊 data</button>
-      <button class="lens-pill" data-lens="product">🎯 product</button>
-      <button class="lens-pill" data-lens="software+data">🤖 software × data</button>
-      <button class="lens-pill" data-lens="data+product">📈 data × product</button>
-      <button class="lens-pill" data-lens="software+product">🧩 software × product</button>
-      <button class="lens-pill" data-lens="all">✨ all three</button>
-    </div>
+    <p class="lens-intro">tap a circle — or where they overlap</p>
 
     <div class="lens-wrap">
-      <div class="venn-box">
-        <svg class="venn" viewBox="0 0 320 300" role="group" aria-label="Venn diagram: software, data, product">
-          <defs>
-            <radialGradient id="g-sw" cx="35%" cy="35%"><stop offset="0%" stop-color="#d4f1ff"/><stop offset="100%" stop-color="#5ec9ff"/></radialGradient>
-            <radialGradient id="g-da" cx="65%" cy="35%"><stop offset="0%" stop-color="#e6dcff"/><stop offset="100%" stop-color="#a06bff"/></radialGradient>
-            <radialGradient id="g-pr" cx="50%" cy="70%"><stop offset="0%" stop-color="#ffe0ee"/><stop offset="100%" stop-color="#ff7eb3"/></radialGradient>
-          </defs>
-          <circle class="v-circle" data-t="software" cx="112" cy="108" r="94" fill="url(#g-sw)"/>
-          <circle class="v-circle" data-t="data"     cx="208" cy="108" r="94" fill="url(#g-da)"/>
-          <circle class="v-circle" data-t="product"  cx="160" cy="192" r="94" fill="url(#g-pr)"/>
-          <text class="v-label" x="76"  y="88">software</text>
-          <text class="v-label" x="244" y="88">data</text>
-          <text class="v-label" x="160" y="250">product</text>
-          <text class="v-mini" x="160" y="74">ML eng</text>
-          <text class="v-mini" x="104" y="178">product eng</text>
-          <text class="v-mini" x="216" y="178">analytics</text>
-          <text class="v-star" x="160" y="140">✿</text>
-        </svg>
-        <p class="venn-hint">✨ the middle is my favorite place</p>
-      </div>
+      <svg class="venn" viewBox="0 0 320 300" role="group" aria-label="Venn diagram: software, data, product — tap to choose">
+        <defs>
+          <radialGradient id="g-sw" cx="35%" cy="35%"><stop offset="0%" stop-color="#d4f1ff"/><stop offset="100%" stop-color="#5ec9ff"/></radialGradient>
+          <radialGradient id="g-da" cx="65%" cy="35%"><stop offset="0%" stop-color="#e6dcff"/><stop offset="100%" stop-color="#a06bff"/></radialGradient>
+          <radialGradient id="g-pr" cx="50%" cy="70%"><stop offset="0%" stop-color="#ffe0ee"/><stop offset="100%" stop-color="#ff7eb3"/></radialGradient>
+        </defs>
+        <circle class="v-circle" data-t="software" cx="112" cy="108" r="94" fill="url(#g-sw)"/>
+        <circle class="v-circle" data-t="data"     cx="208" cy="108" r="94" fill="url(#g-da)"/>
+        <circle class="v-circle" data-t="product"  cx="160" cy="192" r="94" fill="url(#g-pr)"/>
+        <text class="v-label" x="76"  y="92">software</text>
+        <text class="v-label" x="244" y="92">data</text>
+        <text class="v-label" x="160" y="252">product</text>
+        <text class="v-star" x="160" y="142">✿</text>
+      </svg>
 
       <div class="glass lens-panel" aria-live="polite">
-        <div class="lens-head">
-          <span class="lens-emoji" id="lensEmoji">✨</span>
-          <div>
-            <p class="lens-kicker" id="lensKicker">all three</p>
-            <h3 id="lensTitle">the overlap</h3>
-          </div>
-        </div>
+        <p class="lens-kicker" id="lensKicker">all three</p>
+        <h3 id="lensTitle">the overlap</h3>
         <p class="lens-pitch" id="lensPitch"></p>
-        <p class="lens-sub">great fit for</p>
-        <div class="lens-roles" id="lensRoles"></div>
-        <p class="lens-sub">proof, not promises</p>
         <ul class="lens-proof" id="lensProof"></ul>
-        <div class="tags" id="lensSkills"></div>
-        <div class="lens-actions">
-          <a class="btn primary small" href="#experience">see matching work ↓</a>
-          <button class="btn ghost small" id="lensShare" type="button">copy link to this view 🔗</button>
-        </div>
+        <p class="lens-roles"><span>fits</span> <span id="lensRoles"></span></p>
       </div>
     </div>
-
   </section>
 
   <!-- ABOUT -->

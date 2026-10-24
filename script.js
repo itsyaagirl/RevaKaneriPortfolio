@@ -144,13 +144,11 @@
     current = key;
     const L = LENSES[key], on = tracksOf(key);
 
-    $("lensEmoji").textContent = L.emoji;
     $("lensKicker").textContent = L.kicker;
     $("lensTitle").innerHTML = L.title;
     $("lensPitch").innerHTML = L.pitch;
-    $("lensRoles").innerHTML = L.roles.map((r) => `<span>${r}</span>`).join("");
+    $("lensRoles").textContent = L.roles.join(" · ");
     $("lensProof").innerHTML = L.proof.map((p) => `<li>${p}</li>`).join("");
-    $("lensSkills").innerHTML = L.skills.map((s) => `<span>${s}</span>`).join("");
 
     const panel = document.querySelector(".lens-panel");
     panel.classList.remove("pop"); void panel.offsetWidth; panel.classList.add("pop");
@@ -203,16 +201,6 @@
     d.title = el.dataset.tracks.replace(/ /g, " · ");
     d.innerHTML = el.dataset.tracks.split(" ").map((t) => `<i class="dot ${DOT[t]}"></i>`).join("");
     el.appendChild(d);
-  });
-
-  $("lensShare").addEventListener("click", async () => {
-    const u = new URL(location.origin + location.pathname);
-    if (current !== "all") u.searchParams.set("lens", current);
-    u.hash = "lens";
-    const btn = $("lensShare");
-    try { await navigator.clipboard.writeText(u.toString()); btn.textContent = "copied! 💜"; }
-    catch (e) { btn.textContent = u.toString(); }
-    setTimeout(() => (btn.textContent = "copy link to this view 🔗"), 2200);
   });
 
   // start from ?lens=… (e.g. a link sent to a data-science recruiter)
