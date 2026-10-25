@@ -45,12 +45,13 @@ const EXPERIENCE = [
   {
     emoji: "🤖", when: "May – Jun 2022", org: "Gamaka AI", place: "Remote",
     tracks: ["software", "data"],
-    role: { all: "Quantitative Researcher" },
-    summary: "Evaluated conversational AI systems for accuracy and speed.",
-    skills: ["Python", "TensorFlow", "RAG"],
+    role: { all: "SDE" },
+    summary: "Built the RAG chatbot on Gamaka AI's website.",
+    skills: ["Python", "RAG", "Vector Search", "NLP"],
     bullets: [
-      { t: ["data"], m: "controlled experiments", text: "measured retrieval quality, intent accuracy and latency" },
-      { t: ["data", "software"], m: "reproducible benchmarks", text: "Python evaluation pipelines that turned error analysis into fixes" }
+      { t: ["software"], m: "RAG chatbot shipped", text: "built the retrieval-augmented assistant answering visitors on Gamaka AI's website" },
+      { t: ["data", "software"], m: "better answers, faster", text: "benchmarked retrieval quality, intent accuracy and latency to tune the bot" },
+      { t: ["data"], m: "reproducible evals", text: "Python evaluation pipelines that turned error analysis into fixes" }
     ]
   },
   {
