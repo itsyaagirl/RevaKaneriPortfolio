@@ -118,19 +118,14 @@ em{font-style:normal;background:linear-gradient(transparent 60%,#ffd6ec 60%)}
 .tags span{background:rgba(160,107,255,.14);color:#7a4dff;padding:5px 12px;border-radius:20px;font-weight:700;font-size:.75rem}
 
 /* ---------- hero venn: software × data × product ---------- */
-.hero-venn{position:relative;max-width:640px;height:290px;margin:22px auto 8px}
-.hero-venn .venn{position:absolute;left:50%;top:0;transform:translateX(-50%);width:270px;height:auto;cursor:pointer;overflow:visible;
-  filter:drop-shadow(0 12px 28px rgba(195,180,255,.45))}
-.v-circle{opacity:.22;mix-blend-mode:multiply;stroke:#fff;stroke-width:2;transition:opacity .35s}
-.v-circle.on{opacity:.66}
-.venn:hover .v-circle{opacity:.3}.venn:hover .v-circle.on{opacity:.75}
-.v-label{font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;fill:var(--ink);text-anchor:middle;pointer-events:none}
-.v-me{pointer-events:none;filter:drop-shadow(0 4px 10px rgba(160,107,255,.35))}
-.v-me-hi{font-family:'Quicksand',sans-serif;font-weight:700;font-size:9.5px;fill:var(--muted);text-anchor:middle}
-.v-me-name{font-family:'Poppins',sans-serif;font-weight:800;font-size:16px;fill:#a06bff;text-anchor:middle}
-.hero-venn .s1{left:6%;top:6%}.hero-venn .s2{left:0;top:42%}.hero-venn .s3{left:10%;top:80%}.hero-venn .s7{left:17%;top:24%}
-.hero-venn .s4{left:auto;right:0;top:4%}.hero-venn .s5{left:auto;right:6%;top:40%}.hero-venn .s8{left:auto;right:14%;top:23%}
-.hero-venn .s6{left:auto;right:0;top:80%}
+.hero-venn{margin:30px auto 6px}
+.venn{display:block;width:300px;max-width:78vw;height:auto;margin:0 auto;cursor:pointer;overflow:visible;
+  filter:drop-shadow(0 12px 28px rgba(195,180,255,.4))}
+.v-circle{opacity:.2;mix-blend-mode:multiply;stroke:#fff;stroke-width:2;transition:opacity .35s}
+.v-circle.on{opacity:.6}
+.venn:hover .v-circle{opacity:.28}.venn:hover .v-circle.on{opacity:.7}
+.v-label{font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;fill:var(--ink);text-anchor:middle;pointer-events:none}
+.v-star{font-size:22px;fill:#fff;text-anchor:middle;pointer-events:none;opacity:.95}
 
 /* matching work highlight */
 .tl-card,.card{position:relative}
@@ -191,8 +186,7 @@ em{font-style:normal;background:linear-gradient(transparent 60%,#ffd6ec 60%)}
   .stat-row{gap:26px}
 }
 @media(max-width:600px){
-  .hero-venn{height:auto;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;max-width:360px}
-  .hero-venn .venn{position:static;transform:none;order:-1;flex:0 0 100%;width:100%;height:220px;margin:0 0 12px}
+  .venn{width:250px}
 }
 
 @media(max-width:960px){
