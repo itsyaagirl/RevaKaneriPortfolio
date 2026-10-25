@@ -12,7 +12,7 @@ const EXPERIENCE = [
     tracks: ["software", "data", "product"],
     role: { all: "SDE Intern" },
     summary: "Built the real-time staffing services behind Amazon Connect's agentic AI.",
-    skills: ["Python", "AWS Lambda", "SageMaker", "Docker"],
+    skills: ["Python", "AWS Lambda", "SageMaker", "DynamoDB", "S3", "Docker", "CDK", "CI/CD", "CloudWatch", "LLM Tool Calling", "NumPy"],
     bullets: [
       { t: ["software", "data"], m: "−52% p99 latency", text: "Python REST API on AWS Lambda serving 170K requests/day" },
       { t: ["software", "product"], m: "Q4 agentic AI launch", text: "exposed both APIs as LLM-agent tools with low-latency schemas" },
@@ -33,7 +33,7 @@ const EXPERIENCE = [
       "software+product": "Data Scientist & Shadow PM"
     },
     summary: "Turned pricing and shipment data into models, pipelines and leadership decisions.",
-    skills: ["Python", "SQL", "SAS", "Power BI"],
+    skills: ["Python", "SQL", "SAS", "scikit-learn", "Fivetran", "Azure", "Power BI", "ETL"],
     bullets: [
       { t: ["data", "product"], m: "40% earlier churn detection", text: "risk model on 10M+ records across 200+ accounts" },
       { t: ["data", "product"], m: "$14.8B+ portfolio", text: "modeled 6+ pricing scenarios across 15+ KPIs for leadership" },
@@ -47,7 +47,7 @@ const EXPERIENCE = [
     tracks: ["software", "data"],
     role: { all: "SDE" },
     summary: "Built the RAG chatbot on Gamaka AI's website.",
-    skills: ["Python", "RAG", "Vector Search", "NLP"],
+    skills: ["Python", "RAG", "Vector Search", "NLP", "TensorFlow"],
     bullets: [
       { t: ["software"], m: "RAG chatbot shipped", text: "built the retrieval-augmented assistant answering visitors on Gamaka AI's website" },
       { t: ["data", "software"], m: "better answers, faster", text: "benchmarked retrieval quality, intent accuracy and latency to tune the bot" },
@@ -59,7 +59,7 @@ const EXPERIENCE = [
     tracks: ["product", "data", "software"],
     role: { all: "Founder & CEO" },
     summary: "Built a beauty brand from 0 to 1.",
-    skills: ["Product", "Pricing", "Go-to-market"],
+    skills: ["Product Strategy", "Pricing", "Segmentation", "Go-to-market"],
     bullets: [
       { t: ["product"], m: "500+ orders", text: "owned discovery, product, launch and growth end to end" },
       { t: ["product", "data"], m: "10M+ social engagements", text: "used retention & segmentation data to shape pricing and positioning" },
@@ -118,6 +118,7 @@ function renderExperience(key) {
           <span class="tl-when">${job.when}</span>
         </div>
         <ul class="tl-bullets">${shown.map((b) => `<li><b class="m">${esc(b.m)}</b> ${esc(b.text)}</li>`).join("")}</ul>
+        <div class="mini-tags">${job.skills.map((k) => `<span>${k}</span>`).join("")}</div>
       </div>`;
   }).join("");
 }
@@ -180,6 +181,11 @@ renderExperience("all");
       el.classList.toggle("lens-fit", key !== "all" && hits === on.length);
     });
 
+    document.querySelectorAll(".tk-row").forEach((row) => {
+      const t = row.dataset.tracks.split(" ");
+      row.classList.toggle("tk-off", key !== "all" && !on.some((x) => t.includes(x)));
+    });
+
     if (chip) {
       chip.hidden = key === "all";
       document.getElementById("lensChipName").textContent = LENS_NAMES[key];
@@ -223,4 +229,47 @@ renderExperience("all");
   let start = "all";
   try { start = new URLSearchParams(location.search).get("lens") || "all"; } catch (e) {}
   setLens(start.replace(" ", "+"), false);
+})();
+
+// ✿ typed "i build …" line — shows what i do, one phrase at a time
+(function () {
+  const el = document.getElementById("typed");
+  if (!el) return;
+  const words = ["AI agents", "low-latency APIs", "ML models", "data pipelines", "RAG systems", "products people use"];
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { el.textContent = words[0]; return; }
+  let w = 0, i = words[0].length, deleting = true;
+  setTimeout(function tick() {
+    const word = words[w];
+    if (deleting) {
+      i--; el.textContent = word.slice(0, i);
+      if (i === 0) { deleting = false; w = (w + 1) % words.length; }
+      return setTimeout(tick, 40);
+    }
+    i++; el.textContent = words[w].slice(0, i);
+    if (i === words[w].length) { deleting = true; return setTimeout(tick, 1600); }
+    setTimeout(tick, 75);
+  }, 1800);
+})();
+
+// ✿ tap my name → little flower burst
+(function () {
+  const btn = document.getElementById("heroName");
+  if (!btn) return;
+  const bits = ["✿", "💜", "✨", "🌸"];
+  btn.addEventListener("click", (e) => {
+    const r = btn.getBoundingClientRect();
+    for (let k = 0; k < 14; k++) {
+      const s = document.createElement("span");
+      s.className = "burst";
+      s.textContent = bits[k % bits.length];
+      s.style.left = (r.left + r.width / 2) + "px";
+      s.style.top = (r.top + r.height / 2) + "px";
+      const ang = (Math.PI * 2 * k) / 14, dist = 90 + Math.random() * 70;
+      s.style.setProperty("--dx", Math.cos(ang) * dist + "px");
+      s.style.setProperty("--dy", Math.sin(ang) * dist + "px");
+      s.style.setProperty("--r", (Math.random() * 120 - 60) + "deg");
+      document.body.appendChild(s);
+      setTimeout(() => s.remove(), 1000);
+    }
+  });
 })();

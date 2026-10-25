@@ -345,3 +345,42 @@ em{font-style:normal;background:linear-gradient(transparent 60%,#ffd6ec 60%)}
   .book-card .btn{width:100%;text-align:center}
   .resume-card{text-align:center;justify-content:center}
 }
+
+/* ================= fun hero ================= */
+.hero-title .hi{display:inline-block;animation:hiPop .9s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes hiPop{0%{transform:translateY(20px) scale(.8);opacity:0}100%{transform:none;opacity:1}}
+.name{font:inherit;border:none;background:none;padding:0;cursor:pointer;display:inline-flex}
+.name span{display:inline-block;animation:letterIn .7s cubic-bezier(.2,1.6,.4,1) both;animation-delay:calc(.25s + var(--i) * .09s)}
+.name i{display:inline-block;font-style:normal;
+  background:linear-gradient(90deg,#ff7eb3,#c86bff,#a06bff,#5ec9ff);background-size:400% 100%;
+  background-position:calc(var(--i) * 33%) 0;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:wiggle 3.2s ease-in-out infinite;animation-delay:calc(1.2s + var(--i) * .14s)}
+@keyframes letterIn{0%{transform:translateY(60px) rotate(-12deg);opacity:0}100%{transform:none;opacity:1}}
+@keyframes wiggle{0%,70%,100%{transform:translateY(0) rotate(0)}78%{transform:translateY(-14px) rotate(-6deg)}86%{transform:translateY(0) rotate(4deg)}}
+.name:hover i{animation:jump .5s cubic-bezier(.2,1.6,.4,1) both;animation-delay:calc(var(--i) * .05s)}
+@keyframes jump{0%{transform:none}50%{transform:translateY(-18px) scale(1.12)}100%{transform:none}}
+.hero-typed{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(1.05rem,2.6vw,1.35rem);color:var(--muted);margin-top:6px;min-height:1.6em}
+.typed{background:linear-gradient(90deg,#ff7eb3,#a06bff);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.caret{display:inline-block;width:3px;height:1.05em;margin-left:3px;vertical-align:-.15em;border-radius:2px;background:#a06bff;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-desc{margin-top:8px;font-size:.88rem}
+.burst{position:fixed;pointer-events:none;font-size:22px;z-index:50;animation:burst 1s ease-out forwards}
+@keyframes burst{0%{transform:translate(0,0) scale(.6);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(1.2) rotate(var(--r));opacity:0}}
+@media (prefers-reduced-motion: reduce){
+  .name span,.name i,.hero-title .hi,.caret{animation:none !important;opacity:1}
+}
+
+/* ================= toolkit + tech chips ================= */
+.toolkit{padding:10px 26px}
+.tk-row{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:start;padding:14px 0;border-bottom:1px solid rgba(160,107,255,.12);transition:opacity .3s,filter .3s}
+.tk-row:last-child{border-bottom:none}
+.tk-label{font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;padding-top:3px}
+.tk-chips{display:flex;flex-wrap:wrap;gap:7px}
+.tk-chips span{background:rgba(255,255,255,.75);border:1px solid rgba(160,107,255,.18);color:var(--ink);padding:4px 11px;border-radius:20px;font-weight:700;font-size:.8rem}
+.tk-row.tk-off{opacity:.3;filter:saturate(.3)}
+.mini-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.mini-tags span{background:rgba(160,107,255,.12);color:#7a4dff;padding:3px 10px;border-radius:20px;font-weight:700;font-size:.72rem}
+@media(max-width:600px){
+  .tk-row{grid-template-columns:1fr;gap:8px}
+  .toolkit{padding:6px 18px}
+}

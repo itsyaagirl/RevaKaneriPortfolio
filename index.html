@@ -20,6 +20,7 @@
     <a href="#home" class="logo">✿ reva</a>
     <div class="nav-links">
       <a href="#about">about</a>
+      <a href="#toolkit">toolkit</a>
       <a href="#experience">experience</a>
       <a href="#projects">projects</a>
       <a href="#resume">resume</a>
@@ -69,7 +70,9 @@
       <span class="wave">👋</span>
     </div>
 
-    <h1 class="hero-title">hi, i'm <span class="grad">Reva</span></h1>
+    <h1 class="hero-title"><span class="hi">hi, i'm</span> <button type="button" class="name" id="heroName" aria-label="Reva — tap me">
+      <span style="--i:0"><i>R</i></span><span style="--i:1"><i>e</i></span><span style="--i:2"><i>v</i></span><span style="--i:3"><i>a</i></span></button></h1>
+    <p class="hero-typed" aria-live="polite">i build <span class="typed" id="typed">AI agents</span><span class="caret" aria-hidden="true"></span></p>
     <p class="hero-desc"><span class="nw">MS Data Science @ UC San Diego</span> · <span class="nw">Amazon · FedEx</span></p>
 
     <!-- software × data × product -->
@@ -107,6 +110,37 @@
     </div>
   </section>
 
+  <!-- TOOLKIT -->
+  <section id="toolkit" class="section">
+    <h2 class="section-title">✿ toolkit</h2>
+    <div class="glass toolkit">
+      <div class="tk-row" data-tracks="software data">
+        <span class="tk-label">🤖 AI &amp; LLMs</span>
+        <div class="tk-chips"><span>LangGraph</span><span>LangChain</span><span>RAG</span><span>AI Agents</span><span>Tool Calling</span><span>Vector DBs</span><span>Embeddings</span><span>LLM Evaluation</span></div>
+      </div>
+      <div class="tk-row" data-tracks="data">
+        <span class="tk-label">🧠 Machine Learning</span>
+        <div class="tk-chips"><span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span><span>XGBoost</span><span>Hugging Face</span><span>Time-Series Forecasting</span><span>NLP</span></div>
+      </div>
+      <div class="tk-row" data-tracks="software">
+        <span class="tk-label">☁️ Cloud &amp; Backend</span>
+        <div class="tk-chips"><span>AWS Lambda</span><span>SageMaker</span><span>DynamoDB</span><span>S3</span><span>Docker</span><span>CI/CD</span><span>REST APIs</span><span>FastAPI</span></div>
+      </div>
+      <div class="tk-row" data-tracks="data product">
+        <span class="tk-label">📊 Data &amp; Analytics</span>
+        <div class="tk-chips"><span>SQL</span><span>ETL Pipelines</span><span>Databricks</span><span>Azure</span><span>Power BI</span><span>Tableau</span><span>A/B Testing</span></div>
+      </div>
+      <div class="tk-row" data-tracks="product">
+        <span class="tk-label">🎯 Product</span>
+        <div class="tk-chips"><span>PRDs</span><span>User Stories</span><span>Roadmapping</span><span>Prioritization</span><span>Pricing Strategy</span><span>Stakeholder Mgmt</span></div>
+      </div>
+      <div class="tk-row" data-tracks="software data product">
+        <span class="tk-label">💻 Languages</span>
+        <div class="tk-chips"><span>Python</span><span>SQL</span><span>Java</span><span>C++</span><span>TypeScript</span><span>JavaScript</span><span>R</span><span>SAS</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- EXPERIENCE (rendered from script.js so it can change with the lens) -->
   <section id="experience" class="section">
     <h2 class="section-title">✿ experience</h2>
@@ -125,21 +159,25 @@
         <h3>👗 AI Fashion Assistant</h3>
         <p class="card-stat">A/B win <small>vs keyword search</small></p>
         <p>LangGraph agent that matches accessories to an outfit photo.</p>
+        <div class="mini-tags"><span>LangGraph</span><span>LangChain</span><span>RAG</span><span>Multimodal</span><span>Tool Calling</span><span>A/B Testing</span></div>
       </article>
       <article class="glass card" data-tracks="data">
         <h3>📱 TikTok Trend Forecasting</h3>
         <p class="card-stat">18.7% MAPE <small>vs 30.7% baseline</small></p>
         <p>XGBoost + LSTM model predicting next week's engagement.</p>
+        <div class="mini-tags"><span>XGBoost</span><span>LSTM</span><span>PyTorch</span><span>NLP</span><span>Time Series</span></div>
       </article>
       <article class="glass card" data-tracks="data product">
         <h3>📉 Early Churn Warning</h3>
         <p class="card-stat">40% earlier <small>churn detection</small></p>
         <p>Risk scores + alerts across 10M+ shipment records.</p>
+        <div class="mini-tags"><span>scikit-learn</span><span>Random Forest</span><span>Gradient Boosting</span><span>SQL</span><span>Power BI</span></div>
       </article>
       <article class="glass card" data-tracks="data product">
         <h3>📈 Trading Signal Analytics</h3>
         <p class="card-stat">risk vs return <small>across scenarios</small></p>
         <p>ML signals that compare strategies on historical market data.</p>
+        <div class="mini-tags"><span>Python</span><span>SQL</span><span>Machine Learning</span><span>Scenario Analysis</span></div>
       </article>
     </div>
   </section>
