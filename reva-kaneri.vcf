@@ -2,10 +2,10 @@ BEGIN:VCARD
 VERSION:3.0
 N:Kaneri;Reva;;;
 FN:Reva Kaneri
-TITLE:AI/ML Engineer
-ORG:UC San Diego
+TITLE:MS Data Science @ UC San Diego · ex-Amazon SDE Intern
+TEL;TYPE=CELL:+18582147027
 EMAIL;TYPE=INTERNET,PREF:rkaneri@ucsd.edu
 URL:https://reva-kaneri.vercel.app
 URL:https://linkedin.com/in/reva-kaneri
-NOTE:MS Data Science @ UC San Diego · AI SWE Intern @ Amazon · ex-FedEx
+NOTE:Software · Data · Product. Graduating Dec 2026.
 END:VCARD

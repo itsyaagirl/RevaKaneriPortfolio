@@ -21,8 +21,8 @@
     <div class="nav-links">
       <a href="#about">about</a>
       <a href="#experience">experience</a>
-      <a href="#community">community</a>
       <a href="#projects">projects</a>
+      <a href="#community">leadership</a>
       <a href="#resume">resume</a>
       <a href="https://linkedin.com/in/reva-kaneri" target="_blank" rel="noopener">linkedin ↗</a>
       <a href="#connect" class="nav-cta">connect</a>
@@ -104,110 +104,86 @@
     <h2 class="section-title">✿ about me</h2>
     <div class="glass about-card">
       <p>
-        i'm a data scientist turned <b>AI/ML engineer</b> currently pursuing my
-        <b>Master's in Data Science at UC San Diego</b> (GPA 4.00, but who's counting 😌).
-        i love the messy, ambiguous problems — turning them into clean, real-time systems that people actually use.
+        i'm finishing my <b>MS in Data Science at UC San Diego</b> (4.00 GPA, graduating <b>Dec 2026</b>).
+        this summer i shipped low-latency AI services as an <b>SDE intern at Amazon</b>; before that i spent
+        2 years at <b>FedEx</b> turning $14.8B+ of revenue data into decisions.
       </p>
-      <p>
-        this summer i'm an <b>AI Software Engineer Intern at Amazon</b>, building agentic AI + low-latency
-        services for Amazon Connect. before grad school i spent 2 years at <b>FedEx</b> building
-        large-scale data pipelines over $14.8B+ in revenue. outside of code, i run a
-        <b>women-in-tech community</b> because tech is better when more of us are in the room. 💫
-      </p>
+      <p>i like problems that sit between <b>software</b>, <b>data</b> and <b>product</b> — and the people they're built for. 💫</p>
       <div class="pills">
-        <span>🎓 UC San Diego</span><span>📦 Amazon</span><span>🚚 FedEx</span>
-        <span>💜 Women in Tech</span><span>🤖 Agentic AI</span>
+        <span>🎓 UC San Diego</span><span>📦 Amazon</span><span>🚚 FedEx</span><span>💜 Women in Tech</span>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- EXPERIENCE (rendered from script.js so it can change with the lens) -->
   <section id="experience" class="section">
     <h2 class="section-title">✿ experience</h2>
-    <div class="timeline">
-      <div class="glass tl-card" data-tracks="software data product">
-        <div class="tl-top"><span class="tl-emoji">📦</span><span class="tl-when">Jun–Sep 2026</span></div>
-        <h3>AI Software Engineer Intern · Amazon</h3>
-        <p>Built <b>ElizaStaffSchedulingService</b> — a synchronous Python API on AWS Lambda serving real-time staffing metrics at &lt;10s p99, replacing a ~52s async pipeline. Designed <b>agentic AI "what-if" workflows</b> so an AI agent can chain forecast + metric computation in one conversational turn. 🤖</p>
-      </div>
-      <div class="glass tl-card" data-tracks="data software">
-        <div class="tl-top"><span class="tl-emoji">🎓</span><span class="tl-when">2025–2027</span></div>
-        <h3>MS Data Science · UC San Diego</h3>
-        <p>GPA 4.00. Coursework in ML, Efficient AI, Algorithms, Recommender Systems & AI Engineering. Graduate researcher in AI-enabled scientific discovery + stochastic optimization. 🔬</p>
-      </div>
-      <div class="glass tl-card" data-tracks="data product">
-        <div class="tl-top"><span class="tl-emoji">🚚</span><span class="tl-when">2023–2025</span></div>
-        <h3>Data Scientist / Engineer · FedEx</h3>
-        <p>Built distributed ETL pipelines (Python/SQL/SAS) improving query performance 60% & saving 40+ hrs/month. Led pricing & revenue-quality analytics across $14.8B+ in revenue with executive dashboards. 📊</p>
-      </div>
+    <div class="lens-chip" id="lensChip" hidden>
+      viewing as <b id="lensChipName">data</b>
+      <button type="button" id="lensClear" aria-label="show everything">show all ✕</button>
     </div>
-  </section>
-
-  <!-- COMMUNITY -->
-  <section id="community" class="section">
-    <h2 class="section-title">✿ my tech community 💜</h2>
-    <div class="glass community-card">
-      <div class="community-glow"></div>
-      <h3>Founder · Women in Tech Community</h3>
-      <p>
-        i founded a <b>social-media tech community of 15+ women engineers</b> — a cozy corner of the internet
-        where we swap resources, mentorship, coding wins & the occasional bug-induced meltdown. 🐛💗
-        i also mentor through <b>SWE EDGE</b> and was an <b>Adobe Women in Technology Scholarship Finalist</b>.
-      </p>
-      <div class="stat-row">
-        <div class="stat"><span class="num">15+</span><span class="lbl">engineers</span></div>
-        <div class="stat"><span class="num">∞</span><span class="lbl">good vibes</span></div>
-        <div class="stat"><span class="num">💜</span><span class="lbl">advocacy</span></div>
-      </div>
-    </div>
+    <div class="timeline" id="expList"></div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="section">
     <h2 class="section-title">✿ projects</h2>
-
-    <p class="sub-label">🌟 impactful builds</p>
     <div class="grid">
       <article class="glass card" data-tracks="software data">
-        <div class="card-emoji">🔭</div>
-        <h3>Agentic AI for Gravitational Lensing</h3>
-        <p>Multi-agent framework orchestrating DeepLenseSim + SLURM to automate simulation, validation & failure recovery for large-scale astrophysics datasets. Mentored by MIT.</p>
-        <div class="tags"><span>Python</span><span>Multi-Agent AI</span><span>SLURM</span></div>
+        <div class="card-emoji">👗</div>
+        <h3>Personalized AI Fashion Assistant</h3>
+        <p>Multimodal LangGraph agent with RAG + tool calling that recommends accessories from an outfit photo — beat keyword search in an A/B test.</p>
+        <div class="tags"><span>LangGraph</span><span>RAG</span><span>Python</span></div>
+      </article>
+      <article class="glass card" data-tracks="data">
+        <div class="card-emoji">📱</div>
+        <h3>TikTok Trend Forecasting</h3>
+        <p>XGBoost + LSTM forecasting 7-day engagement at 18.7% MAPE (vs 30.7% baseline), plus a trend ranker at 0.81 ROC-AUC.</p>
+        <div class="tags"><span>XGBoost</span><span>PyTorch</span><span>NLP</span></div>
       </article>
       <article class="glass card" data-tracks="data product">
         <div class="card-emoji">📉</div>
         <h3>Early Churn Warning System</h3>
-        <p>ML pipeline over 10M+ records for 200+ accounts generating risk scores + automated alerts — improved early churn detection by 40%.</p>
-        <div class="tags"><span>ML</span><span>Feature Eng</span><span>Python</span></div>
+        <p>Account-level risk scores + automated alerts over 10M+ shipment records — 40% earlier churn detection.</p>
+        <div class="tags"><span>scikit-learn</span><span>SQL</span><span>Power BI</span></div>
       </article>
-      <article class="glass card" data-tracks="software product">
-        <div class="card-emoji">⚡</div>
-        <h3>Real-Time Metrics API</h3>
-        <p>Synchronous low-latency service replacing a 52s async pipeline — real-time "what-if" staffing analysis at &lt;10s p99 on AWS Lambda.</p>
-        <div class="tags"><span>AWS</span><span>Distributed</span><span>API Design</span></div>
+      <article class="glass card" data-tracks="data product">
+        <div class="card-emoji">📈</div>
+        <h3>AI Trading Signal Analytics</h3>
+        <p>Compares strategy performance, risk and returns across market scenarios to back data-driven recommendations.</p>
+        <div class="tags"><span>Python</span><span>SQL</span><span>ML</span></div>
       </article>
     </div>
+  </section>
 
-    <p class="sub-label">🎀 cute little side quests <span class="mock">(for fun ✨)</span></p>
-    <div class="grid">
-      <article class="glass card cute" data-tracks="software product">
-        <div class="card-emoji">☕</div>
-        <h3>MoodBrew</h3>
-        <p>A tiny app that recommends a coffee based on your mood + a lo-fi playlist to match. because debugging needs a soundtrack.</p>
-        <div class="tags"><span>React</span><span>JS</span><span>Whimsy</span></div>
-      </article>
-      <article class="glass card cute" data-tracks="data software">
-        <div class="card-emoji">🪴</div>
-        <h3>PlantPal</h3>
-        <p>ML classifier that IDs your houseplant from a photo and reminds you to water it (so it stops dying). 96% accuracy, 0 dead plants.</p>
-        <div class="tags"><span>CV</span><span>Python</span><span>TensorFlow</span></div>
-      </article>
-      <article class="glass card cute" data-tracks="software">
-        <div class="card-emoji">✍️</div>
-        <h3>CommitPoet</h3>
-        <p>CLI that turns your boring git commit messages into tiny haikus. purely chaotic, deeply loved by my terminal.</p>
-        <div class="tags"><span>CLI</span><span>NLP</span><span>Fun</span></div>
-      </article>
+  <!-- LEADERSHIP -->
+  <section id="community" class="section">
+    <h2 class="section-title">✿ leadership &amp; community 💜</h2>
+    <div class="glass community-card">
+      <div class="community-glow"></div>
+      <div class="stat-row">
+        <div class="stat"><span class="num">800+</span><span class="lbl">students supported as a TA<br/>COGS 18 · DSC 152, UCSD</span></div>
+        <div class="stat"><span class="num">100+</span><span class="lbl">women in tech community<br/>SWE · EDGE mentor</span></div>
+        <div class="stat"><span class="num">20K+</span><span class="lbl">creator &amp; podcast<br/>audience</span></div>
+      </div>
+      <p class="tiny community-note">Adobe Women in Technology Scholarship Finalist</p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <h2 class="section-title">✿ education</h2>
+    <div class="edu-grid">
+      <div class="glass edu-card">
+        <span class="tl-when">2025 – Dec 2026</span>
+        <h3>MS Data Science · UC San Diego</h3>
+        <p>GPA 4.00 · ML Systems, Scalable Systems, Recommender Systems, Human-Centered AI</p>
+      </div>
+      <div class="glass edu-card">
+        <span class="tl-when">2019 – 2023</span>
+        <h3>B.Tech · NMIMS (MPSTME), Mumbai</h3>
+        <p>Data Structures &amp; Algorithms, Software Engineering, Database Systems</p>
+      </div>
     </div>
   </section>
 
@@ -217,12 +193,14 @@
     <div class="glass resume-card">
       <div class="resume-icon">📄</div>
       <div class="resume-text">
-        <h3>Reva Kaneri · AI/ML Engineer</h3>
-        <p>MS Data Science @ UC San Diego · AI SWE Intern @ Amazon · 2 yrs Data Science @ FedEx</p>
+        <h3 id="resumeTitle">Reva Kaneri · Resume</h3>
+        <p class="resume-alt">also: <a href="resume-software.pdf" target="_blank" rel="noopener">software</a> ·
+          <a href="resume-data-science.pdf" target="_blank" rel="noopener">data science</a> ·
+          <a href="resume-data-analyst.pdf" target="_blank" rel="noopener">data analyst</a> ·
+          <a href="resume-product.pdf" target="_blank" rel="noopener">product</a></p>
       </div>
       <div class="resume-actions">
-        <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">view resume</a>
-        <a class="btn ghost" href="resume.pdf" download="Reva-Kaneri-Resume.pdf">download ⬇</a>
+        <a class="btn primary" id="resumeLink" href="resume.pdf" target="_blank" rel="noopener">view resume</a>
       </div>
     </div>
   </section>
