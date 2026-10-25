@@ -103,14 +103,14 @@
   <section id="about" class="section">
     <h2 class="section-title">✿ about me</h2>
     <div class="glass about-card">
-      <p>
-        i'm finishing my <b>MS in Data Science at UC San Diego</b> (4.00 GPA, graduating <b>Dec 2026</b>).
-        this summer i shipped low-latency AI services as an <b>SDE intern at Amazon</b>; before that i spent
-        2 years at <b>FedEx</b> turning $14.8B+ of revenue data into decisions.
-      </p>
-      <p>i like problems that sit between <b>software</b>, <b>data</b> and <b>product</b> — and the people they're built for. 💫</p>
-      <div class="pills">
-        <span>🎓 UC San Diego</span><span>📦 Amazon</span><span>🚚 FedEx</span><span>💜 Women in Tech</span>
+      <p class="about-lead">i build where <b class="t-sw">software</b>, <b class="t-da">data</b> and <b class="t-pr">product</b> meet.</p>
+      <p>real-time AI services at <b>Amazon</b>. pricing &amp; churn models at <b>FedEx</b>. a beauty brand i grew from zero.
+        now finishing my <b>MS in Data Science at UC San Diego</b>.</p>
+      <div class="facts">
+        <div><span>🎓</span><b>Dec 2026</b><small>graduating</small></div>
+        <div><span>⭐</span><b>4.00 GPA</b><small>UC San Diego</small></div>
+        <div><span>📍</span><b>San Diego, CA</b><small>based in</small></div>
+        <div><span>💼</span><b>Full-time</b><small>open to roles</small></div>
       </div>
     </div>
   </section>
@@ -130,27 +130,35 @@
     <h2 class="section-title">✿ projects</h2>
     <div class="grid">
       <article class="glass card" data-tracks="software data">
-        <div class="card-emoji">👗</div>
-        <h3>Personalized AI Fashion Assistant</h3>
-        <p>Multimodal LangGraph agent with RAG + tool calling that recommends accessories from an outfit photo — beat keyword search in an A/B test.</p>
+        <div class="card-top"><span class="card-emoji">👗</span><span class="card-year">2026</span></div>
+        <h3>AI Fashion Assistant</h3>
+        <p class="card-problem">Find accessories that actually match your outfit.</p>
+        <div class="card-result"><b>A/B win</b><small>over keyword search</small></div>
+        <p>Multimodal LangGraph agent — reads an outfit photo, retrieves products with RAG, ranks by style &amp; trend.</p>
         <div class="tags"><span>LangGraph</span><span>RAG</span><span>Python</span></div>
       </article>
       <article class="glass card" data-tracks="data">
-        <div class="card-emoji">📱</div>
+        <div class="card-top"><span class="card-emoji">📱</span><span class="card-year">2025</span></div>
         <h3>TikTok Trend Forecasting</h3>
-        <p>XGBoost + LSTM forecasting 7-day engagement at 18.7% MAPE (vs 30.7% baseline), plus a trend ranker at 0.81 ROC-AUC.</p>
+        <p class="card-problem">Predict which content will take off next week.</p>
+        <div class="card-result"><b>18.7% MAPE</b><small>vs 30.7% baseline · 0.81 ROC-AUC ranker</small></div>
+        <p>XGBoost + LSTM on engagement history, with NLP features from captions and hashtags.</p>
         <div class="tags"><span>XGBoost</span><span>PyTorch</span><span>NLP</span></div>
       </article>
       <article class="glass card" data-tracks="data product">
-        <div class="card-emoji">📉</div>
+        <div class="card-top"><span class="card-emoji">📉</span><span class="card-year">2025</span></div>
         <h3>Early Churn Warning System</h3>
-        <p>Account-level risk scores + automated alerts over 10M+ shipment records — 40% earlier churn detection.</p>
+        <p class="card-problem">Spot customers about to leave — before they do.</p>
+        <div class="card-result"><b>40% earlier</b><small>churn detection on 10M+ records</small></div>
+        <p>Risk scores + automated alerts that account teams could act on.</p>
         <div class="tags"><span>scikit-learn</span><span>SQL</span><span>Power BI</span></div>
       </article>
       <article class="glass card" data-tracks="data product">
-        <div class="card-emoji">📈</div>
+        <div class="card-top"><span class="card-emoji">📈</span><span class="card-year">2025</span></div>
         <h3>AI Trading Signal Analytics</h3>
-        <p>Compares strategy performance, risk and returns across market scenarios to back data-driven recommendations.</p>
+        <p class="card-problem">Which strategy wins — on risk, not just return?</p>
+        <div class="card-result"><b>multi-scenario</b><small>strategy comparison</small></div>
+        <p>ML signals on historical market data, compared across market conditions to back recommendations.</p>
         <div class="tags"><span>Python</span><span>SQL</span><span>ML</span></div>
       </article>
     </div>
@@ -159,15 +167,24 @@
   <!-- LEADERSHIP -->
   <section id="community" class="section">
     <h2 class="section-title">✿ leadership &amp; community 💜</h2>
-    <div class="glass community-card">
-      <div class="community-glow"></div>
-      <div class="stat-row">
-        <div class="stat"><span class="num">800+</span><span class="lbl">students supported as a TA<br/>COGS 18 · DSC 152, UCSD</span></div>
-        <div class="stat"><span class="num">100+</span><span class="lbl">women in tech community<br/>SWE · EDGE mentor</span></div>
-        <div class="stat"><span class="num">20K+</span><span class="lbl">creator &amp; podcast<br/>audience</span></div>
+    <div class="lead-grid">
+      <div class="glass lead-card">
+        <span class="num">800+</span><span class="lbl">students</span>
+        <h3>Teaching Assistant · UCSD</h3>
+        <p>COGS 18 (Intro to Python) &amp; DSC 152 (Applied Statistics)</p>
       </div>
-      <p class="tiny community-note">Adobe Women in Technology Scholarship Finalist</p>
+      <div class="glass lead-card">
+        <span class="num">100+</span><span class="lbl">members</span>
+        <h3>Women in Tech · SWE</h3>
+        <p>built the community &amp; mentor through EDGE UCSD</p>
+      </div>
+      <div class="glass lead-card">
+        <span class="num">20K+</span><span class="lbl">audience</span>
+        <h3>Creator &amp; Podcast Host</h3>
+        <p>career &amp; lifestyle content, 8+ episodes with industry guests</p>
+      </div>
     </div>
+    <p class="award">🏅 Adobe Women in Technology Scholarship Finalist</p>
   </section>
 
   <!-- EDUCATION -->
@@ -175,14 +192,16 @@
     <h2 class="section-title">✿ education</h2>
     <div class="edu-grid">
       <div class="glass edu-card">
-        <span class="tl-when">2025 – Dec 2026</span>
-        <h3>MS Data Science · UC San Diego</h3>
-        <p>GPA 4.00 · ML Systems, Scalable Systems, Recommender Systems, Human-Centered AI</p>
+        <div class="edu-top"><span class="tl-when">2025 – Dec 2026</span><span class="edu-gpa">4.00 GPA</span></div>
+        <h3>MS Data Science</h3>
+        <p class="edu-school">UC San Diego</p>
+        <p>ML Systems · Scalable Systems · Recommender Systems · Human-Centered AI</p>
       </div>
       <div class="glass edu-card">
-        <span class="tl-when">2019 – 2023</span>
-        <h3>B.Tech · NMIMS (MPSTME), Mumbai</h3>
-        <p>Data Structures &amp; Algorithms, Software Engineering, Database Systems</p>
+        <div class="edu-top"><span class="tl-when">2019 – 2023</span><span class="edu-gpa">3.65 GPA</span></div>
+        <h3>B.Tech</h3>
+        <p class="edu-school">NMIMS (MPSTME), Mumbai</p>
+        <p>Data Structures &amp; Algorithms · Software Engineering · Database Systems</p>
       </div>
     </div>
   </section>

@@ -1,17 +1,19 @@
-// ✿ experience data — each bullet is tagged software / data / product.
-// The lens picks the 2 bullets that best match, and the role title that fits.
+// ✿ experience — every bullet leads with its result (m), then what i did (text).
+// Bullets are tagged software / data / product; the lens shows the best 2.
 const EXPERIENCE = [
   {
     emoji: "📦", when: "Jun – Sep 2026", org: "Amazon", place: "AWS · Amazon Connect · Seattle",
     tracks: ["software", "data", "product"],
     role: { all: "SDE Intern" },
+    summary: "Built the real-time staffing services behind Amazon Connect's agentic AI.",
+    skills: ["Python", "AWS Lambda", "SageMaker", "Docker"],
     bullets: [
-      { t: ["software", "data"], text: "Built a low-latency Python REST API on AWS Lambda — <b>170K requests/day</b>, <b>p99 latency down 52%</b>." },
-      { t: ["software", "product"], text: "Exposed it as <b>tools for an LLM agent</b>, enabling a partner team's Q4 agentic AI launch." },
-      { t: ["data", "software"], text: "Built an <b>ML forecasting API on SageMaker</b> serving 15-min staffing forecasts in <b>under 2s</b>." },
-      { t: ["software"], text: "Vectorized Erlang-C queue modeling with NumPy; shipped via phased rollout with <b>zero Sev-0s</b>." },
-      { t: ["product"], text: "<b>Owned delivery end to end</b> — turned staffing requirements into a shipped, customer-facing service." },
-      { t: ["product", "data"], text: "Identified <b>latency as the blocker</b> for real-time and agentic use cases, and drove the fix." }
+      { t: ["software", "data"], m: "−52% p99 latency", text: "Python REST API on AWS Lambda serving 170K requests/day" },
+      { t: ["software", "product"], m: "Q4 agentic AI launch", text: "exposed both APIs as LLM-agent tools with low-latency schemas" },
+      { t: ["data", "software"], m: "<2s forecasts", text: "ML inference API on SageMaker for 15-min staffing forecasts" },
+      { t: ["software"], m: "zero Sev-0s", text: "vectorized Erlang-C modeling in NumPy, shipped behind feature flags" },
+      { t: ["product"], m: "end-to-end owner", text: "turned staffing requirements into a shipped, customer-facing service" },
+      { t: ["product", "data"], m: "8 KPIs benchmarked", text: "proved parity with production before rollout" }
     ]
   },
   {
@@ -21,33 +23,40 @@ const EXPERIENCE = [
       all: "Data Scientist & Analyst",
       data: "Data Scientist",
       "data+product": "Data Analyst",
-      product: "Pricing Strategy Analyst & Product Manager Associate",
+      product: "Pricing Strategy Analyst & PM Associate",
       "software+product": "Data Scientist & Shadow PM"
     },
+    summary: "Turned pricing and shipment data into models, pipelines and leadership decisions.",
+    skills: ["Python", "SQL", "SAS", "Power BI"],
     bullets: [
-      { t: ["data", "product"], text: "Built a <b>churn risk model</b> on 10M+ records across 200+ accounts — <b>40% earlier detection</b>." },
-      { t: ["data", "product"], text: "Led revenue risk analysis across a <b>$14.8B+ portfolio</b>: 6+ pricing scenarios, 15+ KPIs, Power BI for leadership." },
-      { t: ["software", "data"], text: "Built a weekly <b>ETL pipeline</b> (Python, Fivetran, SAS → Azure) — <b>60% faster</b>, <b>40+ hrs/month</b> saved." },
-      { t: ["product"], text: "<b>Shadow PM</b> for a pricing automation bot: PRDs, user stories, <b>30+ UAT cases</b>, 4 workflows automated." },
-      { t: ["product"], text: "Gathered requirements from <b>10+ Pricing &amp; Sales stakeholders</b> and drove delivery with engineering." }
+      { t: ["data", "product"], m: "40% earlier churn detection", text: "risk model on 10M+ records across 200+ accounts" },
+      { t: ["data", "product"], m: "$14.8B+ portfolio", text: "modeled 6+ pricing scenarios across 15+ KPIs for leadership" },
+      { t: ["software", "data"], m: "40+ hrs/month saved", text: "weekly ETL pipeline (Python, Fivetran, SAS → Azure), 60% faster" },
+      { t: ["product"], m: "4 workflows automated", text: "shadow PM for a pricing bot — PRDs, user stories, 30+ UAT cases" },
+      { t: ["product"], m: "10+ stakeholders", text: "gathered requirements across Pricing & Sales, drove delivery with engineering" }
     ]
   },
   {
     emoji: "🤖", when: "May – Jun 2022", org: "Gamaka AI", place: "Remote",
     tracks: ["software", "data"],
     role: { all: "Quantitative Researcher" },
+    summary: "Evaluated conversational AI systems for accuracy and speed.",
+    skills: ["Python", "TensorFlow", "RAG"],
     bullets: [
-      { t: ["data"], text: "Evaluated conversational AI on <b>retrieval quality, intent accuracy and latency</b>." },
-      { t: ["data", "software"], text: "Built reproducible <b>Python benchmarking pipelines</b>; used error analysis to improve accuracy and speed." }
+      { t: ["data"], m: "controlled experiments", text: "measured retrieval quality, intent accuracy and latency" },
+      { t: ["data", "software"], m: "reproducible benchmarks", text: "Python evaluation pipelines that turned error analysis into fixes" }
     ]
   },
   {
     emoji: "💄", when: "2020 – 2024", org: "RevsCosmetics", place: "Mumbai",
-    tracks: ["product", "data"],
+    tracks: ["product", "data", "software"],
     role: { all: "Founder & CEO" },
+    summary: "Built a beauty brand from 0 to 1.",
+    skills: ["Product", "Pricing", "Go-to-market"],
     bullets: [
-      { t: ["product"], text: "Took a beauty brand <b>from 0 to 1</b> — customer discovery, product, launch and growth; <b>500+ orders</b>." },
-      { t: ["product", "data"], text: "Used retention &amp; segmentation insights to shape pricing; built a <b>virtual try-on</b> and analytics dashboard." }
+      { t: ["product"], m: "500+ orders", text: "owned discovery, product, launch and growth end to end" },
+      { t: ["product", "data"], m: "10M+ social engagements", text: "used retention & segmentation data to shape pricing and positioning" },
+      { t: ["software", "product"], m: "virtual try-on", text: "launched a lip-gloss try-on and analytics dashboard" }
     ]
   }
 ];
@@ -94,13 +103,20 @@ function renderExperience(key) {
     const role = job.role[key] || on.map((t) => job.role[t]).find(Boolean) || job.role.all;
     const bullets = pickBullets(job, key);
     const shown = bullets.length ? bullets : job.bullets.slice(0, 2);
+    const esc = (x) => x.replace(/&(?!amp;)/g, "&amp;").replace(/</g, "&lt;");
     return `
       <div class="glass tl-card${dim ? " lens-dim" : ""}${fit ? " lens-fit" : ""}" data-tracks="${job.tracks.join(" ")}">
-        <div class="tl-top"><span class="tl-emoji">${job.emoji}</span><span class="tl-when">${job.when}</span></div>
-        <h3>${role} · ${job.org}</h3>
-        <p class="tl-place">${job.place}</p>
-        <ul class="tl-bullets">${shown.map((b) => `<li>${b.text}</li>`).join("")}</ul>
-        <span class="track-dots">${job.tracks.map((t) => `<i class="dot ${DOT[t]}"></i>`).join("")}</span>
+        <div class="tl-head">
+          <span class="tl-emoji">${job.emoji}</span>
+          <div class="tl-id"><h3>${role} · ${job.org}</h3><p class="tl-place">${job.place}</p></div>
+          <span class="tl-when">${job.when}</span>
+        </div>
+        <p class="tl-summary">${job.summary}</p>
+        <ul class="tl-bullets">${shown.map((b) => `<li><b class="m">${esc(b.m)}</b><span>${esc(b.text)}</span></li>`).join("")}</ul>
+        <div class="tl-foot">
+          <div class="mini-tags">${job.skills.map((k) => `<span>${k}</span>`).join("")}</div>
+          <span class="track-dots">${job.tracks.map((t) => `<i class="dot ${DOT[t]}"></i>`).join("")}</span>
+        </div>
       </div>`;
   }).join("");
 }
