@@ -1,3 +1,9 @@
+// ✿ BOOKING LINK — paste your Google Calendar appointment page or Zoom Scheduler link here.
+// Until it's set, "book a chat" opens an email to you instead.
+const BOOKING_URL = "";
+
+document.querySelectorAll(".book-link").forEach((a) => { if (BOOKING_URL) a.href = BOOKING_URL; });
+
 // ✿ experience — every bullet leads with its result (m), then what i did (text).
 // Bullets are tagged software / data / product; the lens shows the best 2.
 const EXPERIENCE = [
@@ -96,6 +102,7 @@ function renderExperience(key) {
   const list = document.getElementById("expList");
   if (!list) return;
   const on = tracksOf(key);
+  const esc = (x) => x.replace(/&(?!amp;)/g, "&amp;").replace(/</g, "&lt;");
   list.innerHTML = EXPERIENCE.map((job) => {
     const hits = job.tracks.filter((t) => on.includes(t)).length;
     const dim = key !== "all" && hits === 0;
@@ -103,20 +110,13 @@ function renderExperience(key) {
     const role = job.role[key] || on.map((t) => job.role[t]).find(Boolean) || job.role.all;
     const bullets = pickBullets(job, key);
     const shown = bullets.length ? bullets : job.bullets.slice(0, 2);
-    const esc = (x) => x.replace(/&(?!amp;)/g, "&amp;").replace(/</g, "&lt;");
     return `
-      <div class="glass tl-card${dim ? " lens-dim" : ""}${fit ? " lens-fit" : ""}" data-tracks="${job.tracks.join(" ")}">
+      <div class="glass tl-card${dim ? " lens-dim" : ""}${fit ? " lens-fit" : ""}">
         <div class="tl-head">
-          <span class="tl-emoji">${job.emoji}</span>
-          <div class="tl-id"><h3>${role} · ${job.org}</h3><p class="tl-place">${job.place}</p></div>
+          <h3>${job.emoji} ${role} · ${job.org}</h3>
           <span class="tl-when">${job.when}</span>
         </div>
-        <p class="tl-summary">${job.summary}</p>
-        <ul class="tl-bullets">${shown.map((b) => `<li><b class="m">${esc(b.m)}</b><span>${esc(b.text)}</span></li>`).join("")}</ul>
-        <div class="tl-foot">
-          <div class="mini-tags">${job.skills.map((k) => `<span>${k}</span>`).join("")}</div>
-          <span class="track-dots">${job.tracks.map((t) => `<i class="dot ${DOT[t]}"></i>`).join("")}</span>
-        </div>
+        <ul class="tl-bullets">${shown.map((b) => `<li><b class="m">${esc(b.m)}</b> ${esc(b.text)}</li>`).join("")}</ul>
       </div>`;
   }).join("");
 }
@@ -164,14 +164,6 @@ renderExperience("all");
   if (!svg) return;
   const circles = [...svg.querySelectorAll(".v-circle")];
   const chip = document.getElementById("lensChip");
-
-  // project cards: colored dots
-  document.querySelectorAll(".card[data-tracks]").forEach((el) => {
-    const d = document.createElement("span");
-    d.className = "track-dots";
-    d.innerHTML = el.dataset.tracks.split(" ").map((t) => `<i class="dot ${DOT[t]}"></i>`).join("");
-    el.appendChild(d);
-  });
 
   function setLens(key, push) {
     if (!LENS_NAMES[key]) key = "all";
