@@ -119,13 +119,15 @@ em{font-style:normal;background:linear-gradient(transparent 60%,#ffd6ec 60%)}
 
 /* ---------- hero venn: software × data × product ---------- */
 .hero-venn{margin:30px auto 6px}
-.venn{display:block;width:300px;max-width:78vw;height:auto;margin:0 auto;cursor:pointer;overflow:visible;
+.venn{display:block;width:400px;max-width:86vw;height:auto;margin:0 auto;cursor:pointer;overflow:visible;
   filter:drop-shadow(0 12px 28px rgba(195,180,255,.4))}
 .v-circle{opacity:.2;mix-blend-mode:multiply;stroke:#fff;stroke-width:2;transition:opacity .35s}
 .v-circle.on{opacity:.6}
 .venn:hover .v-circle{opacity:.28}.venn:hover .v-circle.on{opacity:.7}
 .v-label{font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;fill:var(--ink);text-anchor:middle;pointer-events:none}
 .v-star{font-size:22px;fill:#fff;text-anchor:middle;pointer-events:none;opacity:.95}
+
+.venn-note{font-size:.82rem;font-weight:600;color:var(--muted);margin-top:10px}
 
 /* matching work highlight */
 .tl-card,.card{position:relative}
@@ -186,7 +188,7 @@ em{font-style:normal;background:linear-gradient(transparent 60%,#ffd6ec 60%)}
   .stat-row{gap:26px}
 }
 @media(max-width:600px){
-  .venn{width:250px}
+  .venn{width:320px}
 }
 
 @media(max-width:960px){
@@ -195,3 +197,4 @@ em{font-style:normal;background:linear-gradient(transparent 60%,#ffd6ec 60%)}
   .nav-links{gap:14px;font-size:.88rem;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding:4px 0}
   .nav-links::-webkit-scrollbar{display:none}
 }
+.nw{white-space:nowrap}

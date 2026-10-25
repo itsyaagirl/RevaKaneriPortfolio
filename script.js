@@ -181,6 +181,8 @@
     });
     if (!hit.length) return;
     setLens(hit.length === 3 ? "all" : hit.join("+"), true);
+    const exp = document.getElementById("experience");
+    if (exp) setTimeout(() => exp.scrollIntoView({ behavior: "smooth", block: "start" }), 250);
   });
 
   pills.forEach((p) => p.addEventListener("click", () => setLens(p.dataset.lens, true)));
