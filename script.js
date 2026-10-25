@@ -1,6 +1,6 @@
 // ✿ BOOKING LINK — paste your Google Calendar appointment page or Zoom Scheduler link here.
 // Until it's set, "book a chat" opens an email to you instead.
-const BOOKING_URL = "";
+const BOOKING_URL = "https://calendar.app.google/Usu3bFNYBLCYKBD88";
 
 document.querySelectorAll(".book-link").forEach((a) => { if (BOOKING_URL) a.href = BOOKING_URL; });
 
